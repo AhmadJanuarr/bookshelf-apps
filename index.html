@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Bookshelf Apps</div>
+    </header>
+    <main class="container">
+      <section class="heading-wrapper">
+        <div class="heading">
+          <h1>Daftar buku</h1>
+          <button class="btn-add">
+            <img src="assets/svg/plus.svg" />
+            <p>Tambahkan Buku</p>
+          </button>
+        </div>
+        <div class="search-wrapper">
+          <label for="search">Judul</label>
+          <input
+            type="text"
+            class="search"
+            placeholder="Cari buku..."
+            id="search"
+          />
+          <button class="btn-search">Cari Buku</button>
+        </div>
+      </section>
+      <!--? MODAL SECTION -->
+      <section class="modal">
+        <div class="modal-content">
+          <h1>Tambahkan Buku</h1>
+          <form class="form" action="#" id="form">
+            <div class="input-wrapper">
+              <label for="judul" class="label">Judul Buku</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="Judul Buku"
+                class="input"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="penulis" class="label">Penulis</label>
+              <input
+                type="text"
+                id="author"
+                placeholder="Penulis"
+                class="input"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="tahun" class="label">Tahun</label>
+              <input
+                type="number"
+                id="year"
+                placeholder="Tahun"
+                class="input"
+                maxlength="4"
+              />
+            </div>
+            <div class="input-wrapper">
+              <input type="radio" name="radio" id="done" />
+              <label for="done">Sudah dibaca</label>
+              <input type="radio" name="radio" id="not-done" />
+              <label for="not-done">Belum dibaca</label>
+            </div>
+            <div class="button-wrapper">
+              <input type="submit" class="btn-submit" value="Submit" />
+              <input type="reset" class="btn-cancel" value="Cancel" />
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!--? END MODAL SECTION -->
+      <section class="list-wrapper">
+        <div class="book-wrapper shadow">
+          <h2>Buku belum selesai dibaca</h2>
+          <div class="list-book" id="uncompleted-books">
+            <!-- <div class="book">
+              <h3 class="title">Judul</h3>
+              <p class="author">Penulis</p>
+              <p class="year">Tahun</p>
+            </div>
+            <div class="action">
+              <button class="btn btn-read">selesai dibaca</button>
+              <button class="btn btn-remove">hapus buku</button>
+            </div> -->
+          </div>
+        </div>
+        <div class="book-wrapper shadow">
+          <h2>Buku selesai dibaca</h2>
+          <div class="list-book" id="completed-books"></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

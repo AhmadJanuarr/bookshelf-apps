@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary-color: #4e53cc;
+  --secondary-color: #b6b6b6;
+  --font-size: 14px;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #f4f4f4;
+}
+/* HEADER */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #6356f5;
+  color: #ffffff;
+}
+.logo {
+  font-weight: 500;
+  font-size: 28px;
+}
+/* END HEADER */
+
+/* MAIN */
+.container {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+  flex-direction: column;
+}
+
+.heading-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.heading h1 {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.heading button {
+  font-size: 16px;
+  padding: 5px 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: var(--font-size);
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: var(--font-size);
+  color: var(--primary-color);
+}
+.search-wrapper input {
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+
+.search-wrapper button {
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: var(--font-size);
+}
+
+.list-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.book-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 50%;
+}
+
+.book-wrapper h2 {
+  font-weight: 400;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.list-book {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--secondary-color);
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+.btn {
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.btn-read {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.btn-remove {
+  border: 1px solid #e84e4e;
+  color: #e84e4e;
+}
+
+.shadow {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.btn-read:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #e84e4e;
+  color: white;
+}
+
+/* END MAIN */
+
+/* MODAL ADD BUTTON */
+.modal {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal-content {
+  display: flex;
+  width: 500px;
+  height: 350px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.label {
+  width: 40%;
+}
+
+.input {
+  width: 60%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.button-wrapper input {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  background-color: transparent;
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: var(--font-size);
+}
+
+.button-wrapper input:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* END MODAL ADD BUTTON */
