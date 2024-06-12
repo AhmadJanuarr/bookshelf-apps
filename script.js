@@ -193,7 +193,6 @@ function makeBook(bookObject) {
     const action = document.createElement("div");
     action.classList.add("action");
     action.append(readButton, removeButton);
-
     container.append(action);
   }
 
@@ -208,6 +207,7 @@ function undoButtonReadBooks(booksID) {
 
   if (bookTarget == null) return;
   bookTarget.isComplete = false;
+  saveData();
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
@@ -216,6 +216,7 @@ function buttonReadBooks(booksID) {
 
   if (bookTarget == null) return;
   bookTarget.isComplete = true;
+  saveData();
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
@@ -227,6 +228,8 @@ function removeButtonBooks(booksID) {
   // Hapus data dari localStorage
   removeFromLocalStorage(bookTarget.id);
   alert(`buku ${bookTarget.title} terhapus`);
+  saveData();
+
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
