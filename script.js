@@ -22,13 +22,13 @@ function generateId() {
 }
 
 //membuat objek buku
-function generateBookObject(id, title, author, year, isCompleted) {
+function generateBookObject(id, title, author, year, isComplete) {
   return {
     id,
     title,
     author,
     year,
-    isCompleted,
+    isComplete,
   };
 }
 
@@ -40,15 +40,15 @@ const SAVED_EVENT = "save-book";
 function addBook() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
-  const year = document.getElementById("year").value;
-  let isCompleted = false;
+  const year = parseInt(document.getElementById("year").value);
+  let isComplete = false;
   const doneRadio = document.getElementById("done");
   const notDoneRadio = document.getElementById("not-done");
 
   if (doneRadio.checked) {
-    isCompleted = true;
+    isComplete = true;
   } else if (notDoneRadio.checked) {
-    isCompleted = false;
+    isComplete = false;
   } else {
     alert("Form tidak boleh ada yang kosong");
     return;
@@ -59,7 +59,7 @@ function addBook() {
     title,
     author,
     year,
-    isCompleted
+    isComplete
   );
   if (title === "" || author === "" || year === "") {
     alert("Form tidak boleh ada yang kosong");
@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   submitForm.addEventListener("submit", (e) => {
     e.preventDefault();
     addBook();
+    // console.log(books);
   });
 
   if (isStorageExist()) {
@@ -120,7 +121,7 @@ document.addEventListener(RENDER_EVENT, function () {
 
   for (const bookItem of books) {
     const bookElement = makeBook(bookItem);
-    if (!bookItem.isCompleted) {
+    if (!bookItem.isComplete) {
       unCompletedBooks.append(bookElement);
     } else {
       completedBooks.append(bookElement);
@@ -152,7 +153,7 @@ function makeBook(bookObject) {
 
   //
 
-  if (bookObject.isCompleted) {
+  if (bookObject.isComplete) {
     const undoButton = document.createElement("button");
     undoButton.classList.add("btn-undo", "btn");
     undoButton.innerText = "Belum selesai di baca";
@@ -206,7 +207,7 @@ function undoButtonReadBooks(booksID) {
   const bookTarget = searchBook(booksID);
 
   if (bookTarget == null) return;
-  bookTarget.isCompleted = false;
+  bookTarget.isComplete = false;
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
@@ -214,7 +215,7 @@ function buttonReadBooks(booksID) {
   const bookTarget = searchBook(booksID);
 
   if (bookTarget == null) return;
-  bookTarget.isCompleted = true;
+  bookTarget.isComplete = true;
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
 
