@@ -1,20 +1,20 @@
-## Rak Buku
+###  Sample Image Bookshelf
 
 <img src="assets/img/1.png">
 
-## Tambahkan Buku
+### Sample Image Add Book 
 
 <img src="assets/img/2.png">
 
-## Feature
+### Feature
 
-- Memiliki Dua Rak Buku
-- Menambahkan Data Buku
-- Dapat Menghapus Data Buku
-- Dapat Memindahkan Buku antar Rak
-- localStorage dalam Menyimpan Data Buku
+- Has Two Bookshelves
+- Add Book Data
+- Can Delete Book Data
+- Can Move Books between Shelves
+- localStorage in Storing Book Data
 
-## Build With
+### Build With Stack
 
 - Javascript
 - Html
